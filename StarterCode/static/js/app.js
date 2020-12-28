@@ -27,7 +27,7 @@ form.on("submit",dataload);
 
 
 //creates a list of the unique dates in the data set
-var uDates=[]
+var uDates=[];
 
 for (let i=0;i<data.length;i++){    
     if(!uDates.includes(data[i].datetime)){
@@ -86,7 +86,7 @@ function dataload(){
         //creates a new row
         var row = tbody.append("tr");
 
-
+        // adds a row for each property in the data
         row.append("td").text(result.datetime);
         row.append("td").text(result.city);
         row.append("td").text(result.state);
@@ -98,11 +98,11 @@ function dataload(){
     });
 
     //console logs for testing
-    console.log("Running dataload function")
+    console.log("Running dataload function");
     console.log(reqdata);
     console.log("-------------");
     console.log(input_value);
-    console.log(input_value[0])
+    console.log(input_value[0]);
 
     // console.log(input);
 };
