@@ -1,28 +1,44 @@
 // from data.js
-/////probably need to replace every use of "data" with tableData
+/////probably need to replace every use of "data" with "tableData"
 // var data = data;
 var tableData = data;
 
 //from html_codes.js
-//need to create a functiontion that uses this dictionary to clean the data 
+//need to create a functiontion that uses this dictionary to clean the data in comments section
 var code_dict = codes;
-
 
 // defines the filter button
 var filt_button = d3.select("#filter-btn");
 
 //defines form
-
 var form =d3.select("form");
-
 
 //defines the body of the table
 var tbody = d3.select("tbody");
 
 
+
 //handles the for submission and filter button clicks
 filt_button.on("click",dateload);
 form.on("submit",dateload);
+
+
+
+//creates a list of unique cities
+var uCities=[];
+
+for (let i=0;i<data.length;i++){    
+    if(!uCities.includes(data[i].city)){
+        uCities.push(data[i].city)
+    }
+};
+
+/// puts uCities in alphabetic order
+uCities.sort();
+
+console.log(uCities);
+
+
 
 
 //creates a list of the unique dates in the data set
@@ -35,10 +51,20 @@ for (let i=0;i<data.length;i++){
 };
 
 
+
 //function that will be used to append data to rows
 /// loop through each record from the requested data and create table data for each column from our data set
 function append_row_data(current_data){
+
+    //removes the table's rows if they're present, resetting the  table
+    tbody.html("");
+
+    /// for each result in the data we'll be adding to the table.....
     current_data.forEach(result => {
+        // delete old table rows
+        // tbody.children().remove();
+        /// count the old rows, if more that zero, remove the rows
+ 
 
         //creates a new row
         var row = tbody.append("tr");
