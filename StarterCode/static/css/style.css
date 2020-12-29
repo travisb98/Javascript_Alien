@@ -223,3 +223,12 @@ select {
     opacity: 1;
   }
 }
+
+
+/* additional edits */
+#UFO{
+  width:10%;
+  height:10%;
+  animation: title 1.2s forwards linear;
+
+}

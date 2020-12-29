@@ -100,9 +100,8 @@ function append_row_data(current_data){
 
 
 
-
+////// to be used in the dataload function when no date is provided within the dataload functino
 function noDateLoad(civ,siv){
-    ////// to be used in the dataload function when no date is provided
     ///if all was selected for the shape or city......
     if(civ == "All" || siv=="All"){
         console.log("city OR shape had all selected");
@@ -192,7 +191,7 @@ function dataload(){
 
         // if there was no input at all.....
         if (date_input_value==""){
-            alert("input was blank");
+
             noDateLoad(city_input_value,shape_input_value);
         }
         // ... the input entered was not blank or in the dataset
@@ -255,10 +254,8 @@ function dataload(){
 // end of dataload function 
 };
 
-
-
-
-
+//this will load the entire table on refresh
+append_row_data(data);
 
 
 
