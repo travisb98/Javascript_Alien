@@ -98,6 +98,9 @@ function append_row_data(current_data){
 //// create a function that cleans the data using the html code dictionary
 
 
+
+
+
 function noDateLoad(civ,siv){
     ////// to be used in the dataload function when no date is provided
     ///if all was selected for the shape or city......
@@ -168,11 +171,10 @@ function dataload(){
     var shape_input_value=shape_input.options[shape_input.selectedIndex].value;
 
 
-    ///////////////////////
+    
 
     ////cleaning the date input
     ///////////
-
     //replaces leading zero from month
     date_input_value=date_input_value.replace(/\/0+/g, '/');
 
@@ -182,11 +184,6 @@ function dataload(){
     };
     //// end cleaning the date input
     ///////////
-
-
-    // if the date is not present in the data
-    /////////deal with blank date, return all dates
-    ///////// deal with date out of range
 
 
 
