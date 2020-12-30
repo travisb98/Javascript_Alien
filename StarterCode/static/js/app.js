@@ -22,10 +22,6 @@ filt_button.on("click",dataload);
 form.on("submit",dataload);
 
 
-
-// creates a list of unique shapes in the data set
-var uShapes=[];
-
 /// function for unique list generation
 function create_unique_list(field){
     var unique_list=[];
@@ -96,6 +92,25 @@ function append_row_data(current_data){
 
 
 //// create a function that cleans the data using the html code dictionary
+
+data.forEach(function(rec){
+    // console.log("starty");
+    // console.log(rec.comments);
+
+
+    for( var [key,value] of Object.entries(code_dict)){
+        // console.log(key);
+        // console.log(value);
+        rec.comments=rec.comments.replace(`${key}`,value);
+        // rec.comments=rec.comments.replace(`${key}$`,value);
+        // rec.comments=rec.comments.replace(`${key}$`,value);
+        // rec.comments=rec.comments.replace(`^${key}`,value);
+
+    };
+
+});
+
+
 
 
 
