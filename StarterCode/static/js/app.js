@@ -59,12 +59,6 @@ uShapes.forEach(newshape => {
 });
 
 
-
-
-
-
-
-
 //function that will be used to append data to rows
 /// loop through each record from the requested data and create table data for each column from our data set
 function append_row_data(current_data){
@@ -79,6 +73,7 @@ function append_row_data(current_data){
         var row = tbody.append("tr");
     
         // adds a row for each property in the data
+        // i think i can slim this down with a loop
         row.append("td").text(result.datetime);
         row.append("td").text(result.city);
         row.append("td").text(result.state);
@@ -91,8 +86,8 @@ function append_row_data(current_data){
 };
 
 
-//// create a function that cleans the data using the html code dictionary
-
+/// need to change this so it addresses all codes. Some aren't working
+//// using the html code dictionary to remove codes from comments
 data.forEach(function(rec){
     // console.log("starty");
     // console.log(rec.comments);
@@ -101,10 +96,13 @@ data.forEach(function(rec){
     for( var [key,value] of Object.entries(code_dict)){
         // console.log(key);
         // console.log(value);
-        rec.comments=rec.comments.replace(`${key}`,value);
-        // rec.comments=rec.comments.replace(`${key}$`,value);
-        // rec.comments=rec.comments.replace(`${key}$`,value);
-        // rec.comments=rec.comments.replace(`^${key}`,value);
+        // rec.comments=rec.comments.replace(`${key}`,value).replace(`${key}$`,value);
+        // rec.comments=rec.comments.replace(`${key}`,value);
+
+        // rec.comments=rec.comments.replace(`/^${key}/`,value).replace(`/${key}$/`,value);
+        
+        rec.comments=rec.comments.replace(`${key}`,value).replace(`${key}$`,value).replace(`^${key}`,value).replace(`.${key}`,value);
+        // rec.comments=rec.comments.replace(`.${key}`,value);
 
     };
 
