@@ -1,7 +1,5 @@
 // from data.js
-/////probably need to replace every use of "data" with "tableData"
-// var data = data;
-var tableData = data;
+var data = data;
 
 //from html_codes.js
 //need to create a functiontion that uses this dictionary to clean the data in comments section
@@ -86,23 +84,16 @@ function append_row_data(current_data){
 };
 
 
-/// need to change this so it addresses all codes. Some aren't working
 //// using the html code dictionary to remove codes from comments
+// for each record in the data set....
 data.forEach(function(rec){
     // console.log("starty");
     // console.log(rec.comments);
 
-
+    // for each key and value in the html code dictionary
     for( var [key,value] of Object.entries(code_dict)){
-        // console.log(key);
-        // console.log(value);
-        // rec.comments=rec.comments.replace(`${key}`,value).replace(`${key}$`,value);
-        // rec.comments=rec.comments.replace(`${key}`,value);
-
-        // rec.comments=rec.comments.replace(`/^${key}/`,value).replace(`/${key}$/`,value);
-        
+        // perform multiple replaces
         rec.comments=rec.comments.replace(`${key}`,value).replace(`${key}$`,value).replace(`^${key}`,value).replace(`.${key}`,value);
-        // rec.comments=rec.comments.replace(`.${key}`,value);
 
     };
 
