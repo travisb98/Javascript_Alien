@@ -142,10 +142,6 @@ function noDateLoad(civ,siv){
 };
 
 
-
-
-
-
 /// main function that loads the table once the button is clicked or the form is submitted
 function dataload(){
 
