@@ -101,9 +101,6 @@ data.forEach(function(rec){
 
 
 
-
-
-
 ////// to be used in the dataload function when no date is provided within the dataload functino
 function noDateLoad(civ,siv){
     ///if all was selected for the shape or city......
@@ -177,7 +174,7 @@ function dataload(){
     
 
     ////cleaning the date input
-    ///////////
+
     //replaces leading zero from month
     date_input_value=date_input_value.replace(/\/0+/g, '/');
 
@@ -185,8 +182,7 @@ function dataload(){
     if(date_input_value[0]==0){
         date_input_value=date_input_value.slice(1,date_input_value.length)
     };
-    //// end cleaning the date input
-    ///////////
+
 
 
 
@@ -252,9 +248,7 @@ function dataload(){
         console.log("row were appended")
     };
 
-    //console logs for testing
-    // console.log("Running dataload function");
-    console.log("-------------");
+    
 // end of dataload function 
 };
 
