@@ -52,6 +52,9 @@ body {
   color: white;
 }
 
+
+
+
 /* Adding styles to the aside and filter form */
 .ufo-form {
   margin-top: 50px;
@@ -115,6 +118,12 @@ select {
   opacity: 0;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
+}
+
+#bar_ufo{
+  animation: horz 1.8s alternate linear;
+  animation-delay:2s;
+
 }
 
 /* input placeholder color changes */
@@ -191,6 +200,7 @@ select {
   }
 }
 
+
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
   from {
@@ -221,6 +231,15 @@ select {
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes horz{
+  from{
+    left:10%
+  }
+  to{
+    left:95%
   }
 }
 
