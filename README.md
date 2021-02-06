@@ -1,4 +1,4 @@
-# JavaScript Homework - JavaScript and DOM Manipulation
+# ![alienhead](StarterCode/static/images/alienhead.png) JavaScript Homework - JavaScript and DOM Manipulation 
 
 ## Background
 
