@@ -1,65 +1,51 @@
-# ![alienhead](StarterCode/static/images/alienhead.png) JavaScript Homework - JavaScript and DOM Manipulation 
+# ![alienhead](StarterCode/static/images/alienhead.png) Alien Sighting Records and Javascript
 
-## Background
+ ## Overview
+- The goal of this project was to create a webpage that displays a table with multiple filtering options. The data source is a collection of details regarding 111 alien encounters.
 
-WAKE UP SHEEPLE! The extra-terrestrial menace has come to Earth and we here at `ALIENS-R-REAL` have collected all of the eye-witness reports we could to prove it! All we need to do now is put this information online for the world to see and then the matter will finally be put to rest.
+ ## Programs, Languages and tools
+  - Javascript
+  - HTML
+  - CSS
+  - D3
+  - Bootstrap
 
-There is just one tiny problem though... our collection is too large to search through manually. Even our most dedicated followers are complaining that they are having trouble locating specific reports in this mess.
 
-That's why we are hiring you. We need you to write code that will create a table dynamically based upon a [dataset we provide](StarterCode/static/js/data.js). We also need to allow our users to filter the table data for specific values. There's a catch though... we only use pure JavaScript, HTML, and CSS, and D3.js on our web pages. They are the only coding languages which can be trusted.
+ ## File overview
+  - #### data.js
+    ##### *source data*
+  - #### html_codes.js
+    ##### *dictionary used for data cleaning*
+  - #### app.js
+    ##### *application code file*
+  - #### style.css
+    ##### *main css styling*
+  - #### index.html
+    ##### *HTML framework*
 
-You can handle this... right? The planet Earth needs to know what we have found!
+ ## Steps/Process
 
-## Your Task
+  - ### Step 1: Set-up
+      - HTML, Bootstrap, and CSS were used to create the framework and styling for the webpage
+      - For the html form lists, only the "All" option was included in the html, the rest were dynamically added with javascript
+      - The tbody for the HTML is initially blank, but is filled using javascript 
 
-### Before You Begin
+  - ### Step 2: Processing User Input and Generating Output
+      - I started off by creating 3 list of unique entries for the Datetime, City, and Shape. I used the list of unique dates to process out-of-range issues with user inputs. Also, I used the unique shape and city lists to populate the form selector on hte left side of the page.
+      - Then, I wrote a few lines of code that would correct the form at of the date input if it was typed incorrectly
+      - Then, I wrote a few lines of code that would take the user's date input and change it to have uniform formatting.
+      - By using "if" statements, I made a decision tree that would determine which filter should be used based on the user's input. My use of the "All" options for the city and shape made this a little more difficult.
 
-1. Create a new repository for this project called `javascript-challenge`. **Do not add this homework to an existing repository**.
+        
+  - ### Step 3: Generating Final Table
+      - I created a subfunction to handle appending data to the html table. I decided to create this as it's own function so I could use the same code at different points depending on the user's input.
 
-2. Clone the new repository to your computer.
 
-3. Inside your local git repository, create a directory for the Javascript challenge. Use the folder names to correspond to the challenges: **UFO-level-1** and **UFO-level-2**.
+ ## How to use the program
+  - Simply open the index.html file in your browser and search/filter using the filter pane to explore the table.
 
-4. Add your **html** files to this folder as well as your static folder containing your javascript. This will be the main script to run for analysis.
-
-5. Push the above changes to GitHub or GitLab.
-
-6. Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
-
-### Level 1: Automatic Table and Date Search (Required)
-
-* Create a basic HTML web page or use the [index.html](StarterCode/index.html) file provided (we recommend building your own custom page!).
-
-* Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your web page and then adds new rows of data for each UFO sighting.
-
-  * Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
-
-* Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
-
-### Level 2: Multiple Search Categories (Optional)
-
-* Complete all of Level 1 criteria.
-
-* Using multiple `input` tags and/or select dropdowns, write JavaScript code so the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
-
-  1. `date/time`
-  2. `city`
-  3. `state`
-  4. `country`
-  5. `shape`
-
-- - -
-
-### Dataset
-
-* [UFO Sightings Data](StarterCode/static/js/data.js)
-
-- - -
-
-**Good luck!**
-
-- - -
-
-### Copyright
-
-Trilogy Education Services © 2019. All Rights Reserved.
+ ## Findings and Conclusion
+    
+  - This project was a great introduction to Javascript and utilizes my knowledge of HTML and CSS. I was able to implement 3 different filters. Utilizing CSS animations was interesting. I attempted to clean the data, however more could have been done. Instead of cleaning data after the fact, I think it would have been a good idea to keep the data uniform by limiting the users' input. This would have made the duration field more consistent and useful.
+  
+      ![pagesnip](StarterCode/static/images/pageSnip.JPG)
